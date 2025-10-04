@@ -1,2 +1,2 @@
 # made-with-ai
-Personal link bio with with ai 100% 🗿
+Personal link bio made with AI 100%
