@@ -1,0 +1,147 @@
+/* ==================================
+   KONSTANTA WARNA DASAR (HITAM & PUTIH)
+   ================================== */
+:root {
+    /* Mode Terang (Light Mode) - Default */
+    --bg-color: #FFFFFF;        /* Latar Belakang Putih */
+    --text-color: #111111;      /* Teks Hitam */
+    --primary-accent: #990000;  /* MERAH GELAP untuk Aksen Utama */
+    --icon-color: #111111;      /* Warna Ikon Normal (Hitam) */
+}
+
+/* Mode Gelap (Dark Mode) - Jika disukai oleh sistem pengguna */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #111111;        /* Latar Belakang Hitam */
+        --text-color: #FFFFFF;      /* Teks Putih */
+        --primary-accent: #CC0000;  /* MERAH GELAP (sedikit lebih terang agar terlihat) */
+        --icon-color: #CCCCCC;      /* Warna Ikon Normal (Putih-abu) */
+    }
+}
+
+
+/* ==================================
+   STRUKTUR DAN TATA LETAK
+   ================================= */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.4s, color 0.4s; /* Transisi halus saat ganti mode */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Lebih ramping untuk tampilan elegan */
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- Profil --- */
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    /* Aksen Merah Gelap pada Border Foto Profil */
+    border: 2px solid var(--primary-accent); 
+}
+
+/* ==================================
+   LINK IKON SOSMED (TANPA GARIS)
+   ================================= */
+.icon-link {
+    /* Warna Ikon Normal: Hitam/Putih-abu */
+    color: var(--icon-color); 
+    text-decoration: none;
+    padding: 10px;
+    font-size: 30px; 
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Efek Hover: Ikon berubah menjadi Merah Gelap */
+.icon-link:hover {
+    color: var(--primary-accent); /* Ikon Merah Gelap saat disentuh */
+    transform: scale(1.15);       /* Efek membesar (sedikit diperbesar untuk penekanan) */
+}
+
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+
+p {
+    font-size: 1.0em;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.links {
+    display: flex;
+    justify-content: center; /* Pusatkan Ikon */
+    flex-wrap: wrap; /* Wajib untuk responsivitas */
+    gap: 25px; 
+    margin-top: 30px;
+    padding: 0 10px; 
+    
+    /* Pastikan semua baris juga rata jika ada lebih dari satu baris */
+    align-items: flex-start; 
+}
+
+
+.icon-link {
+    /* ... Properti CSS Anda yang lain ... */
+    
+    /* Tambahkan ini untuk menata elemen di dalamnya */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--icon-color); 
+    text-decoration: none;
+    padding: 10px;
+    font-size: 30px; 
+    line-height: 1; /* Penting untuk menghilangkan spasi vertikal ekstra */
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Targetkan Ikon Font Awesome di dalam tautan */
+.icon-link i {
+    /* Pastikan tampilan adalah blok inline untuk kontrol yang lebih baik */
+    display: inline-block; 
+    /* Hilangkan spasi vertikal yang mungkin ditambahkan oleh browser */
+    vertical-align: middle; 
+}
+
+
+
+/* Efek Hover: Ikon menjadi sedikit lebih gelap/terang dan membesar */
+.icon-link:hover {
+    color: var(--text-color); /* Sedikit lebih dominan saat disentuh */
+    transform: scale(1.1); /* Efek membesar */
+}
+
+/* ==================================
+   LINK TAMBAHAN (Opsional, jika ada tautan selain ikon)
+   ================================= */
+/* Jika Anda ingin menambahkan tautan tombol lain, gunakan class 'link-btn' */
+.link-btn {
+    /* Style di sini jika Anda ingin menambahkan tombol penuh */
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.8em;
+    opacity: 0.6;
+}
